@@ -20,4 +20,22 @@ public class MediaEntity {
         this.uuid = UUID.randomUUID().toString();
         this.fileName = fileName;
     }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public MediaEntity setUuid(String uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public MediaEntity setFileName(String fileName) {
+        this.fileName = fileName;
+        return this;
+    }
 }

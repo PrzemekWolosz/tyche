@@ -3,6 +3,7 @@ package com.przemyslawwolosz.module.media;
 import com.przemyslawwolosz.module.media.storage.FileSystemStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,8 @@ public class FileUploadController {
     private FileSystemStorage storage;
 
     @GetMapping("/media")
-    public String getMediaPage() {
+    public String getMediaPage(Model model) {
+        model.addAttribute("files", storage.list());
         return "media/index.html";
     }
 
